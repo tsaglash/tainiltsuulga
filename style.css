@@ -1,0 +1,166 @@
+:root {
+  --undsen: #bc8cf2;
+  --black: #000000;
+  --white: #f7f5f2;
+  --grey: #dfdfde;
+}
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 18px;
+}
+header h1 {
+  color: var(--undsen);
+}
+header a:hover {
+  color: var(--undsen);
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+main section#nuur {
+  display: flex;
+  flex-direction: row;
+  height: 95vh;
+}
+main section#nuur .baruun img {
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  transform: translateY(0px);
+  animation: floating 3s ease-in-out infinite;
+}
+.nuur {
+  flex: 1;
+}
+.zuun {
+  flex: 1;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.baruun {
+  flex: 1;
+
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@keyframes floating {
+  0% {
+    box-shadow: 4px 14px 29px 20px lightgray (0, 0, 0, 0.1);
+    transform: translateY(0px);
+  }
+
+  50% {
+    box-shadow: 4px 14px 29px 20px var(--undsen);
+    transform: translateY(20px);
+  }
+
+  100% {
+    box-shadow: 4px 14px 29px 20px lightgray (0, 0, 0, 0.1);
+    transform: translateY(0px);
+  }
+}
+
+/* Хөдөлдөг текст анимэйшн */
+
+.animated-text {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+}
+
+.animated-text span {
+  position: relative;
+}
+
+.animated-text span::before {
+  content: "Youtuber";
+  color: #ff7f50;
+  animation: words 20s infinite;
+}
+
+.animated-text span::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  background-color: #2f3542;
+  border-left: 2px solid #ff7f50;
+  right: -8px;
+  animation: cursor 0.8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #ff7f5000;
+  }
+}
+
+@keyframes words {
+  20% {
+    content: "Youtuber";
+  }
+  40% {
+    content: "Blogger";
+  }
+  60% {
+    content: "Developer";
+  }
+  80% {
+    content: "Designer";
+  }
+  100% {
+    content: "Gamer";
+  }
+}
+
+@keyframes typing {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 8px);
+  }
+}
+#about {
+  display: flex;
+}
+.bb {
+  display: flex;
+}
+.anime {
+  width: 70px;
+  height: 70px;
+}
